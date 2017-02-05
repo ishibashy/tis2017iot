@@ -17,6 +17,7 @@ import os
 from time import sleep
 from datetime import datetime
 
+
 # PRI sensor setup
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(17, GPIO.IN)
@@ -40,8 +41,8 @@ def read_tmp_sensor():
 # rest interface setting
 key = os.getenv("maker_key")
 event = os.getenv("maker_event_store_sensor")
-trigger_url = 'https://maker.ifttt.com/trigger/' + event + '/with/key/' + key
-
+trigger_url = 'https://maker.ifttt.com/trigger/' + str(event) + '/with/key/' + str(key)
+print(trigger_url)
 # ifttt(maker)
 def trigger_ifttt():
     # post data
